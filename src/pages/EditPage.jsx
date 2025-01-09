@@ -50,7 +50,7 @@ const EditPage = () => {
         toast.success("Post updated successfully!", {
           position: "top-center",
         });
-        navigate(`/view-post/${postId}`); // Navigate back to the view page
+        navigate(`/view-post/${postId}`);
       })
       .catch((error) => {
         toast.error("Failed to update the post.", {
@@ -61,44 +61,46 @@ const EditPage = () => {
   };
   return (
     <>
-      <div className="p-6 max-w-3xl mx-auto bg-cyan-100 border border-gray-300 rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold mb-4">Edit Post</h1>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label htmlFor="title" className="block text-lg font-medium mb-2">
-              Title
-            </label>
-            <input
-              type="text"
-              id="title"
-              name="title"
-              value={formData.title}
-              onChange={handleChange}
-              className="w-full p-2 border border-gray-300 rounded-lg"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="body" className="block text-lg font-medium mb-2">
-              Body
-            </label>
-            <textarea
-              id="body"
-              name="body"
-              value={formData.body}
-              onChange={handleChange}
-              className="w-full p-2 border border-gray-300 rounded-lg"
-              rows="5"
-              required
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
-          >
-            Save Changes
-          </button>
-        </form>
+      <div className="h-screen w-full  flex items-center justify-center bg-gradient-to-r from-green-500 to-blue-300">
+        <div className="p-6 max-w-3xl w-1/2 mx-auto bg-cyan-100 border border-gray-300 rounded-lg shadow-md">
+          <h1 className="text-2xl font-bold mb-4 font-serif">Edit Post</h1>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-4">
+              <label htmlFor="title" className="block text-lg font-medium mb-2">
+                Title
+              </label>
+              <input
+                type="text"
+                id="title"
+                name="title"
+                value={formData.title}
+                onChange={handleChange}
+                className="w-full p-2 border border-gray-300 rounded-lg"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="body" className="block text-lg font-medium mb-2">
+                Body
+              </label>
+              <textarea
+                id="body"
+                name="body"
+                value={formData.body}
+                onChange={handleChange}
+                className="w-full p-2 border border-gray-300 rounded-lg"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+            >
+              Save Changes
+            </button>
+          </form>
+        </div>
       </div>
     </>
   );

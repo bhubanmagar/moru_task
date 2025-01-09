@@ -45,31 +45,38 @@ const ViewPage = () => {
   }, [post]);
   return (
     <>
-      <div className="p-6 max-w-3xl mx-auto bg-cyan-100 border border-gray-300 rounded-lg shadow-md relative">
-        {/* Edit and Delete Icons */}
-        <div className="absolute top-4 right-4 flex gap-4">
-          <button
-            onClick={handleEdit}
-            className="p-2 text-blue-500 bg-blue-100 rounded-full hover:bg-blue-200"
-          >
-            <FiEdit size={13} />
-          </button>
-          <button
-            onClick={handleDelete}
-            className="p-2 text-red-500 bg-red-100 rounded-full hover:bg-red-200"
-          >
-            <FiTrash size={13} />
-          </button>
-        </div>
-        <div className="">
-          {post && (
-            <>
-              <span className="font-bold text-2xl"> Post Details :</span>
-              <h1 className="text-lg font-bold mb-4">{post.title}</h1>
-              <hr />
-              <p className="text-gray-700 text-sm">{post.body}</p>
-            </>
-          )}
+      <div className="h-screen max-w-full flex justify-center items-center bg-gradient-to-r from-green-800 to-blue-400">
+        <div className="p-6 max-w-3xl mx-auto bg-cyan-100 border border-gray-300 rounded-lg shadow-md relative">
+          {/* Edit and Delete Icons */}
+          <div className="absolute top-4 right-4 flex gap-4">
+            <button
+              onClick={handleEdit}
+              className="p-2 text-blue-500 bg-blue-100 rounded-full hover:bg-blue-200"
+            >
+              <FiEdit size={13} />
+            </button>
+            <button
+              onClick={handleDelete}
+              className="p-2 text-red-500 bg-red-100 rounded-full hover:bg-red-200"
+            >
+              <FiTrash size={13} />
+            </button>
+          </div>
+          <div className="">
+            {post && (
+              <>
+                <span className="font-bold text-xl font-serif">
+                  {" "}
+                  Post Details :
+                </span>
+                <h1 className="text-lg font-bold mb-2 bg-blue-100 rounded p-1">
+                  {post.title}
+                </h1>
+                <hr />
+                <p className="text-gray-700 text-sm mt-3">{post.body}</p>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </>
