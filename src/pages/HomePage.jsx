@@ -49,9 +49,8 @@ const HomePage = () => {
         </button>
       </Link>
       <p className="text-lg text-white font-semibold mb-4">Your Posts:</p>
-
-      {/* Table with styled elements */}
-      <table className="min-w-full bg-white shadow-lg rounded-lg overflow-hidden">
+      {/* table */}
+      <table className="min-w-full bg-slate-200 shadow-lg rounded-lg overflow-hidden">
         <thead>
           <tr className="bg-gray-100 text-gray-700">
             <th className="px-6 py-4 font-medium">Post ID</th>
@@ -84,7 +83,7 @@ const HomePage = () => {
         <button
           onClick={() => paginate(currentPage - 1)}
           disabled={currentPage === 1}
-          className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-400 disabled:bg-gray-300 disabled:cursor-not-allowed transition duration-200 ease-in-out"
+          className="px-5 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-400 disabled:bg-gray-300 disabled:cursor-not-allowed transition duration-200 ease-in-out"
         >
           Prev
         </button>
@@ -94,7 +93,7 @@ const HomePage = () => {
           <button
             key={pageNumber}
             onClick={() => paginate(pageNumber)}
-            className={`px-4 py-2 mx-2 rounded-lg text-white ${
+            className={`px-3 py-2 mx-2 rounded-lg text-white ${
               currentPage === pageNumber
                 ? "bg-teal-500 hover:bg-teal-400"
                 : "bg-gray-300 hover:bg-gray-200"
@@ -107,7 +106,7 @@ const HomePage = () => {
         <button
           onClick={() => paginate(currentPage + 1)}
           disabled={currentPage === totalPages}
-          className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-400 disabled:bg-gray-300 disabled:cursor-not-allowed transition duration-200 ease-in-out"
+          className="px-5 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-400 disabled:bg-gray-300 disabled:cursor-not-allowed transition duration-200 ease-in-out"
         >
           Next
         </button>
