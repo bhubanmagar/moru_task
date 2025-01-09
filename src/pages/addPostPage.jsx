@@ -32,12 +32,14 @@ const AddPostPage = () => {
       .then((data) => {
         toast.success("Post created successfully!", {
           position: "top-center",
+          autoClose: 1000,
         });
         navigate("/"); // Redirect to the post list page
       })
       .catch((error) => {
         toast.error("Failed to create the post.", {
           position: "top-center",
+          autoClose: 1000,
         });
         console.error("Error creating post:", error);
       });

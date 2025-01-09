@@ -49,12 +49,14 @@ const EditPage = () => {
       .then((data) => {
         toast.success("Post updated successfully!", {
           position: "top-center",
+          autoClose: 1000,
         });
         navigate(`/view-post/${postId}`);
       })
       .catch((error) => {
         toast.error("Failed to update the post.", {
           position: "top-center",
+          autoClose: 200,
         });
         console.error("Error updating post:", error);
       });

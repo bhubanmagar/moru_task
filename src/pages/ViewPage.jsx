@@ -26,6 +26,7 @@ const ViewPage = () => {
         .then(() => {
           toast.success("Post Deleted Sucessfully!", {
             position: "top-center",
+            autoClose: 1000,
           });
           navigate("/"); // Redirect back to the homepage or list page
         })
@@ -65,15 +66,17 @@ const ViewPage = () => {
           <div className="">
             {post && (
               <>
-                <span className="font-bold text-xl font-serif">
+                <span className="font-bold text-lg font-serif">
                   {" "}
                   Post Details :
                 </span>
-                <h1 className="text-lg font-bold mb-2 bg-blue-100 rounded p-1">
-                  {post.title}
-                </h1>
-                <hr />
-                <p className="text-gray-700 text-sm mt-3">{post.body}</p>
+                <div className="ml-2 p-2">
+                  <h1 className="text-xl font-bold mb-2 rounded p-1">
+                    {post.title}
+                  </h1>
+                  <hr />
+                  <p className="text-gray-700 text-sm mt-3">{post.body}</p>
+                </div>
               </>
             )}
           </div>
